@@ -1,38 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <!-- Scripts -->
-    <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"
-        integrity="sha256-3blsJd4Hli/7wCQ+bmgXfOdK7p/ZUMtPXY08jmxSSgk=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
-        integrity="sha256-t8GepnyPmw9t+foMh3mKNvcorqNHamSKtKRxxpUEgFI=" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
-        integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
-        integrity="sha256-ENFZrbVzylNbgnXx0n3I1g//2WeO47XxoPe0vkp3NC8=" crossorigin="anonymous">
-    <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
-</head>
-
-<body>
+@section('content')
     <div class="ui container">
         <div class="ui grid">
-            <div class="ten wide column">
+            <div class="twelve wide column">
                 <div style="color: #5571ec" class="ui horizontal divider">
                     Aptitudes
                 </div>
@@ -45,7 +16,7 @@
                     desarrollo de la misma, como su implementación dentro del software que lo necesite, he trabajado con
                     Mysql, MariaDB y PostgreSQL</p>
             </div>
-            <div class="six wide column">
+            <div class="four wide column">
                 <div class="ui card">
                     <div class="image">
                         <img src="user-male-icon.png">
@@ -66,7 +37,6 @@
                         </a>
                     </div>
                 </div>
-
             </div>
             <div style="color: #5571ec" class="ui horizontal divider">
                 Formación
@@ -117,6 +87,4 @@
             </div>
         </div>
     </div>
-</body>
-
-</html>
+@endsection
