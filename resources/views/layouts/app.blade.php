@@ -39,10 +39,19 @@
             background-color:#5571ec !important;
             margin:100px 0px 0px 0px !important;
         }
+        
+        body {
+            display: flex !important;
+            min-height: 100vh !important;
+            flex-direction: column !important;
+        }
+
+        main {
+            flex: 1 0 auto !important;
+        }
     </style>
 </head>
 <body>
-    <div>
         <nav>
             <div class="ui secondary menu nav">
                 <a class="active item">
@@ -81,6 +90,5 @@
         <footer class="footer">
             este es mi footer
         </footer>
-    </div>
 </body>
 </html>
