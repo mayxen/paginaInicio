@@ -54,13 +54,13 @@
 <body>
         <nav>
             <div class="ui secondary menu nav">
-                <a class="active item">
+                <a href="/" class="active item">
                     {{ config('app.name', 'Laravel') }}
                 </a>
-                <a class="item">
+                <a href="/trabajos" class="item">
                     Trabajos
                 </a>
-                <a class="item">
+                <a href="/contacto" class="item">
                     Contacto
                 </a>
                 <div class="right menu">

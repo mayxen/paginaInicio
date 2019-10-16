@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/trabajos', function () {
-    return view('Users/welcome');
+    return view('Users/trabajos');
 });
 
 Route::get('/trabajo', function () {
