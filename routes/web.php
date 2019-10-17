@@ -20,7 +20,7 @@ Route::get('/trabajos', function () {
 });
 
 Route::get('/trabajo', function () {
-    return view('Users/welcome');
+    return view('Users/trabajo');
 });
 
 
