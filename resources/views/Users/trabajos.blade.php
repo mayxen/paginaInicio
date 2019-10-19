@@ -347,7 +347,7 @@
                         <a>c#</a>
                     </div>
                     <div class="description">
-                        Juego de juego dond el objetivo es jugar
+                        Juego de juego donde el objetivo es jugar
                     </div>
                 </div>
             </div>

@@ -11,19 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('Users/inicio');
-});
-
-Route::get('/trabajos', function () {
-    return view('Users/trabajos');
-});
-
-Route::get('/trabajo', function () {
-    return view('Users/trabajo');
-});
 
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+Route::resource('/trabajos','trabajosController');

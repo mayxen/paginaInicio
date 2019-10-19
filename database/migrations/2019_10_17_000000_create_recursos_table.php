@@ -21,7 +21,7 @@ class CreateRecursosTable extends Migration
             $table->string('url_imagen');
             $table->string('url_recurso');
             $table->string('url_video');
-            $table->foreign('trabajos_id')->references('id')->on('trabajos');
+            $table->integer('trabajos_id');
             $table->timestamps();
         });
     }

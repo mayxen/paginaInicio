@@ -88,7 +88,23 @@
         </main>
 
         <footer class="footer">
-            este es mi footer
+            <div class="ui grid">
+                <div class="ten wide column">
+                    <p>Muchas gracias</p>
+                    <p>Muchas gracias</p>
+                    <p>Muchas gracias</p>
+                    <p>Muchas gracias</p>
+                    <p>Muchas gracias</p>
+                </div>
+                
+                <div class="five wide column">
+                    <p>Muchas gracias</p>
+                    <p>Muchas gracias</p>
+                    <p>Muchas gracias</p>
+                    <p>Muchas gracias</p>
+                    
+                </div>
+            </div>
         </footer>
 </body>
 </html>

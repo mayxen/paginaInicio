@@ -17,7 +17,8 @@ class CreateTrabajosTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('description');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('lenguaje');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }
