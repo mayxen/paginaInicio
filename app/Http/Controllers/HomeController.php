@@ -27,4 +27,15 @@ class HomeController extends Controller
         $user = User::first();
         return view('Users/inicio', compact('user'));
     }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function contacto()
+    {
+        
+        return view('Users/contacto');
+    }
 }

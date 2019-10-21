@@ -18,6 +18,7 @@ Route::group(['middleware' => ['auth']], function () {
 
 });
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/contacto', 'HomeController@contacto')->name('contacto');
 Route::resource('/trabajos','trabajosController');
 Route::get('/admin', 'adminController@index')->name('Admin');
 Route::get('/admin/cv', 'adminController@curriculum')->name('Cv');

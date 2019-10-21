@@ -48,11 +48,19 @@
         main {
             flex: 1 0 auto !important;
         }
+
+        .shadow {
+            box-shadow: 0px -4px 10px 5px rgba(0,0,0,0.75) !important;
+        }
+
+        .reverseshadow{
+            box-shadow: inset -2px 13px 21px -17px rgba(0,0,0,0.75) !important;
+        }
     </style>
 </head>
 <body>
-        <nav>
-            <div class="ui secondary menu nav">
+        <nav class="">
+            <div class="ui secondary menu nav shadow">
                 <a href="/" class="active item">
                     {{ config('app.name', 'Laravel') }}
                 </a>
@@ -86,7 +94,7 @@
             @yield('content')
         </main>
 
-        <footer class="footer">
+        <footer class="footer reverseshadow">
             <div class="ui grid">
                 <div class="ten wide column">
                     <p>Muchas gracias</p>
