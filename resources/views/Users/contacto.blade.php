@@ -28,8 +28,8 @@
 
 </div>
 <script>
-
     $(document).ready(function () {
+        $('a[href="/contacto"]').addClass("active");
         $(".enviar").click(function (e) {
             e.preventDefault();
             if ($("#email").val() != "" && $("#name").val() != "" && $("#subject").val() != "" && $("#message").val() != "") {

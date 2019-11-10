@@ -103,61 +103,65 @@
     </div>
 </div>
 <script>
-    var whereTo= "";
-    $(".openModal").click(function(e){
-        e.preventDefault();
-        whereTo = $(this).attr("data-where");
-        $('.ui.modal').modal('show');
-    });
+    $(document).ready(function(){
+        $('a[href="/admin"]').addClass("active");
+        var whereTo= "";
+        $(".openModal").click(function(e){
+            e.preventDefault();
+            whereTo = $(this).attr("data-where");
+            $('.ui.modal').modal('show');
+        });
 
-    $(".uploadData").click(function(e){
-        e.preventDefault();
-        $.ajax({
-            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-            url: "{{ url('/admin/')}}"+"/"+whereTo,
-            type: 'POST',
-            data: {
-                'name':$('#name').val(),
-                'descr':$('#descr').val()
-            },
-            success: function(msg) {
-                location.reload();
-            },
-            error: function(error) {
-                
-                
-            },
+        $(".uploadData").click(function(e){
+            e.preventDefault();
+            $.ajax({
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                url: "{{ url('/admin/')}}"+"/"+whereTo,
+                type: 'POST',
+                data: {
+                    'name':$('#name').val(),
+                    'descr':$('#descr').val()
+                },
+                success: function(msg) {
+                    location.reload();
+                },
+                error: function(error) {
+                    
+                    
+                },
+            });
+        });
+
+        $(".eliminar").click(function(e) {
+            whereTo = $(this).attr("data-where");
+            e.preventDefault();
+            swal({
+                title: "¿Estas seguro?",
+                text: "Estás apunto de borrar un dato de tu CV",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    $.ajax({
+                        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                        url: "{{url('/admin/delete')}}"+"/"+whereTo,
+                        type: "DELETE",
+                        data: {
+                            'id': $(this).attr("data-id")
+                        },
+                        success: function(e) {
+                            location.reload();
+                        },
+                        error: function () {
+                            
+                        }
+                    });
+                }
+            });
         });
     });
-
-    $(".eliminar").click(function(e) {
-        whereTo = $(this).attr("data-where");
-        e.preventDefault();
-        swal({
-            title: "¿Estas seguro?",
-            text: "Estás apunto de borrar un dato de tu CV",
-            icon: "warning",
-            buttons: true,
-            dangerMode: true,
-        })
-        .then((willDelete) => {
-            if (willDelete) {
-                $.ajax({
-                    headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                    url: "{{url('/admin/delete')}}"+"/"+whereTo,
-                    type: "DELETE",
-                    data: {
-                        'id': $(this).attr("data-id")
-                    },
-                    success: function(e) {
-                        location.reload();
-                    },
-                    error: function () {
-                        
-                    }
-                });
-            }
-        });
-    });
+    
 </script>
 @endsection

@@ -8,6 +8,7 @@ use App\aptitude;
 use App\experiencia;
 use App\formacion;
 use App\otro;
+use App\trabajo;
 
 class adminController extends Controller
 {
@@ -113,4 +114,75 @@ class adminController extends Controller
     public function deleteDet(Request $request){
         otro::find($request->id)->delete();
     }
+    
+    /**
+     * 
+     * 
+     */
+    public function createTrabajo(Request $request){
+        $trabajo = new trabajo();
+        $trabajo->user_id = auth()->user()->id;
+        $trabajo->name = $request->name;
+        $trabajo->description = $request->descr;
+        $trabajo->lenguaje = $request->lenguaje;
+        $trabajo->save();
+    }
+    
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function listadoTrabajos()
+    {
+        $trabajos = trabajo::all();
+        return view('Admin/listadoTrabajo', compact('trabajos'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function viewCreateTrabajo()
+    {
+        return view('Admin/crearTrabajo');
+    }
+
+    /**
+     * 
+     * 
+     */
+    public function getDatosTrabajo(Request $request){
+        $trabajo =trabajo::find($request->id);
+
+        
+        return json_encode($trabajo);
+    }
+
+    /**
+     * 
+     * 
+     */
+    public function updateDatosTrabajo(Request $request){
+        $trabajo =trabajo::find($request->id);
+
+        $trabajo->name = $request->name;
+        $trabajo->lenguaje = $request->lenguaje;
+        $trabajo->description = $request->descr;
+        
+        $trabajo->save();
+        return "datos actualizados correctamente";
+    }
+
+    
+    /**
+     * 
+     * 
+     */
+    public function deleteTrabajo(Request $request){
+        trabajo::find($request->id)->delete();
+        return "el trabajo ha sido eliminado";
+    }
+    
 }

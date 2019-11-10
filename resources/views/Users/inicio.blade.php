@@ -70,4 +70,10 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function(){
+        $('a[href="/"]').addClass("active");
+    });
+</script>
 @endsection

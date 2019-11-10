@@ -11,23 +11,41 @@
                     Puedes añadir nuevos trabajos, aptitudes... etc.
                 </div>
             </div>
-            <div class="ui bottom attached button">
+            <a href="/admin/cv" class="ui bottom attached button">
                 <i class="add icon"></i>
                 Administrar
-            </div>
+            </a>
         </div>
         <div class="card">
             <div class="content">
-                <div class="header">Modificar trabajos</div>
+                <div class="header">Crear trabajo</div>
                 <div class="description">
-                    Crud de trabajos
+                    Vista para crear un trabajo
                 </div>
             </div>
-            <div class="ui bottom attached button">
+            <a href="/admin/crearTrabajo" class="ui bottom attached button">
                 <i class="add icon"></i>
                 Administrar
+            </a>
+        </div>
+        <div class="card">
+            <div class="content">
+                <div class="header">Listado trabajos</div>
+                <div class="description">
+                    Tabla con todos los trabajos realizados
+                </div>
             </div>
+            <a href="/admin/listadoTrabajos" class="ui bottom attached button">
+                <i class="add icon"></i>
+                Administrar
+            </a>
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function(){
+        $('a[href="/admin"]').addClass("active");
+    });
+</script>
 @endsection

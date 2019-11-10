@@ -61,7 +61,7 @@
 <body>
         <nav class="">
             <div class="ui secondary menu nav shadow">
-                <a href="/" class="active item">
+                <a href="/" class="item">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <a href="/trabajos" class="item">
@@ -70,6 +70,12 @@
                 <a href="/contacto" class="item">
                     Contacto
                 </a>
+                @guest
+                @else
+                <a href="/admin" class="item">
+                    Admin
+                </a>
+                @endguest
                 <div class="right menu">
                     <div class="item">
                         <div class="ui icon input">
@@ -78,7 +84,7 @@
                         </div>
                     </div>
                     @guest
-                    <a class="item">
+                    <a href="/login" class="item">
                         Administrar
                     </a>
                     @else
